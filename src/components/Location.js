@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Location = (props) => {
-    const city = props.city;
+    //destructuring
+    const { city } = props;
+    
     return (
         <div><h1>{city}</h1></div>);
 };
