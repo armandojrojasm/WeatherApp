@@ -39,8 +39,8 @@ const icons = {
 };
 
 WeatherTemperature.propTypes = {
-    temperature: PropTypes.number,
-    weatherState: PropTypes.string,
+    temperature: PropTypes.number.isRequired,
+    weatherState: PropTypes.string.isRequired,
 };
 
 export default WeatherTemperature;
