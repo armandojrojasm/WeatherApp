@@ -1,5 +1,13 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
+import {
+    CLOUD,
+    CLOUDY,
+    SUN,
+    RAIN,
+    SNOW,
+    WINDY,
+} from './../constants/weathers'
 
 const WeatherTemperature = ({ temperature, weatherState }) => (
     <div>
@@ -12,7 +20,7 @@ const WeatherTemperature = ({ temperature, weatherState }) => (
 
 const getWeatherIcon = weatherState => {
     const icon = icons[weatherState];
-    
+
     if(icon)
         return <WeatherIcons name={icon} size="2x"></WeatherIcons>;
 
@@ -21,8 +29,12 @@ const getWeatherIcon = weatherState => {
 
 //diccionary
 const icons = {
-    sunny: "day-sunny",
-    fog: "day-fog"
+    [CLOUD]: "cloud",
+    [CLOUDY]: "cloudy",
+    [SUN]: "day-sunny",
+    [RAIN]: "rain",
+    [SNOW]: "snow",
+    [WINDY]: "windy"
 };
 
 export default WeatherTemperature;
