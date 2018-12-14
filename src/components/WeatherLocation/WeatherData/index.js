@@ -3,7 +3,7 @@ import WeatherExtraInfo from './WeatherExtraInfo';
 import WeatherTempature from './WeatherTemperature';
 import {
     SUN,
-} from './../constants/weathers'
+} from './../../../constants/weathers';
 
 const WeatherData = () => (
     <div>
