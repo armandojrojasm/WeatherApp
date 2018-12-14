@@ -9,9 +9,10 @@ import {
     WINDY,
 } from './../../../constants/weathers';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 const WeatherTemperature = ({ temperature, weatherState }) => (
-    <div>
+    <div className="weatherTemperatureCont">
         {
             getWeatherIcon(weatherState)
         }
