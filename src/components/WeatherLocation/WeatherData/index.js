@@ -6,14 +6,16 @@ import {
 } from './../../../constants/weathers';
 import './styles.css';
 
-const WeatherData = () => (
-    <div className="weatherDataCont">
+const WeatherData = ({ data }) => {
+    const { temperature, weatherState, humidity, wind } = data;
+
+    return (<div className="weatherDataCont">
         <WeatherTempature 
-            temperature={20} 
-            weatherState={SUN}>
+            temperature={temperature} 
+            weatherState={weatherState}>
         </WeatherTempature>
-        <WeatherExtraInfo humidity={80} wind={"10 m/s"}></WeatherExtraInfo>
-    </div>
-);
+        <WeatherExtraInfo humidity={humidity} wind={wind}></WeatherExtraInfo>
+    </div>);
+};
 
 export default WeatherData;
