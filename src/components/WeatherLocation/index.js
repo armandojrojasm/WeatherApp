@@ -53,14 +53,13 @@ class WeatherLocation extends Component {
         console.log("actualizado");
         
         //esto no sirve, el unico sitio donde puedo hacer es 'this.state' es en constructor
-        //para modificar state, hay que llamar a 'this.setState'
+        //para modificar state, hay que llamar a 'this.setState()'
         /*this.state = {
             city: 'Buenos Aires!',
             data: data2
         };*/
 
         this.setState({
-            city: 'Buenos Aires!',
             data: data2
         });
 
