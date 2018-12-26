@@ -56,7 +56,16 @@ class WeatherLocation extends Component {
     }      
 
     handleUpdateClick = () => {
-        fetch(api_weather);
+        fetch(api_weather).then((resolve) => {
+           
+            return resolve.json();// para obtener el json se llama a función 'json',
+            //pero devuelve una promesa
+        }).then((data) =>{//como devuelve una promesa
+            //se una nuevamente 'then' y 'data' es el json
+
+            console.log(data);
+            debugger;
+        });
 
         console.log("actualizado");
         
