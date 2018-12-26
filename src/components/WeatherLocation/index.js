@@ -77,5 +77,21 @@ class WeatherLocation extends Component {
 }
 
 
+/*EJEMPLO de promesa:
+let promesa = new Promise( (resolve, rejected) => {
+	setTimeout(() => {
+  	resolve("Exito total");
+  }, 2000);
+});
+
+console.log("Inicio...");
+
+promesa.then( (mensaje) => {
+	console.log(mensaje);
+  console.log("...Fin");
+});
+*/
+
+
 
 export default WeatherLocation;
