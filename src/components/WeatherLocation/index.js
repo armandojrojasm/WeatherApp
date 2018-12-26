@@ -4,7 +4,7 @@ import WeatherData from './WeatherData';
 import './styles.css';
 import { 
     SUN,
-    WINDY
+    //WINDY
 } from './../../constants/weathers';
 
 const location = "Buenos Aires,ar";
@@ -20,12 +20,12 @@ const data = {
     wind: '10 m/s'
 }
 
-const data2 = {
+/*const data2 = {
     temperature: 15,
     weatherState: WINDY,
     humidity: 30,
     wind: '10 m/s'
-}
+}*/
 
 /*const WeatherLocation = () => (
     <div className="weatherLocationCont">
@@ -62,12 +62,17 @@ class WeatherLocation extends Component {
             //pero devuelve una promesa
         }).then((data) =>{//como devuelve una promesa
             //se una nuevamente 'then' y 'data' es el json
-
             console.log(data);
             debugger;
+            const newWeather = this.getData(data);
+            console.log(newWeather);
+            debugger;
+            this.setState({
+                data: newWeather
+            });
         });
 
-        console.log("actualizado");
+        //console.log("actualizado");
         
         //esto no sirve, el unico sitio donde puedo hacer es 'this.state' es en constructor
         //para modificar state, hay que llamar a 'this.setState()'
@@ -76,10 +81,29 @@ class WeatherLocation extends Component {
             data: data2
         };*/
 
-        this.setState({
+        /*this.setState({
             data: data2
-        });
+        });*/
 
+    };
+
+    getData = (weather_data) => {
+        const { humidity, temp } = weather_data.main;
+        const { speed } = weather_data.wind;
+        const weatherState = this.getWeatherState(weather_data);
+
+        const data = {
+            humidity,
+            temperature : temp,
+            weatherState,
+            wind: `${speed} m/s`,
+        }
+
+        return data;
+    };
+
+    getWeatherState = (weather_data) => {
+        return SUN;
     };
 
 
