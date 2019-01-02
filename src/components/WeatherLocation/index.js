@@ -33,14 +33,19 @@ const data = {
 class WeatherLocation extends Component {
     
     constructor() {
+        console.log("construtor");
+
         super();// super constructor o constructor de donde extiende o hereda
         this.state = {
             city: 'Buenos Aires',
             data: data,
         };
+
     }
 
     render() {
+        console.log("render");
+
         const { city, data } = this.state;
         return (
             <div className="weatherLocationCont">
@@ -49,6 +54,7 @@ class WeatherLocation extends Component {
                 <button onClick={this.handleUpdateClick}>Actualizar</button>
             </div>
         );
+
     }      
 
     handleUpdateClick = () => {
@@ -82,6 +88,31 @@ class WeatherLocation extends Component {
         });*/
 
     };
+
+    componentDidMount() {
+        console.log("componentDidMount");
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log("componentDidUpdate");
+        
+    }
+
+    
+    componentWillMount() {
+        console.log("UNSAFE componentWillMount");
+        
+    }
+
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log("UNSAFE componentWillUpdate");
+        
+    }
+    
+    
+    
+    
 
 
 }
