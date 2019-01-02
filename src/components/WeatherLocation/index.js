@@ -6,14 +6,8 @@ import {
     SUN,
     //WINDY
 } from './../../constants/weathers';
-import convert from 'convert-units';
-
-const location = "Buenos Aires,ar";
-const api_key = "96b8e87ae43c0ed78d9b24fac11fed1c";
-const url_base_weather = "http://api.openweathermap.org/data/2.5/weather";
-
-//const api_weather = `${url_base_weather}?q=${location}&appid=${api_key}&units=metric`;
-const api_weather = `${url_base_weather}?q=${location}&appid=${api_key}`;
+import transformWeather from './../../services/transformWeather';
+import { api_weather } from './../../constants/api_url';
 
 const data = {
     temperature: 27,
@@ -66,7 +60,7 @@ class WeatherLocation extends Component {
             //se una nuevamente 'then' y 'data' es el json
             console.log(data);
             debugger;
-            const newWeather = this.getData(data);
+            const newWeather = transformWeather(data);
             console.log(newWeather);
             debugger;
             this.setState({
@@ -89,30 +83,7 @@ class WeatherLocation extends Component {
 
     };
 
-    getData = (weather_data) => {
-        const { humidity, temp } = weather_data.main;
-        const { speed } = weather_data.wind;
-        const weatherState = this.getWeatherState(weather_data);
-        const temperature = this.getTemp(temp);
 
-        const data = {
-            humidity,
-            temperature,
-            weatherState,
-            wind: `${speed} m/s`,
-        }
-
-        return data;
-    };
-
-    getWeatherState = (weather_data) => {
-        return SUN;
-    };
-
-    getTemp = (kelvin) => {
-        console.log(kelvin);
-        return convert(kelvin).from("K").to("C").toFixed(2);
-    };
 }
 
 
