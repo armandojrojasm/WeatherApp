@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import Location from './Location'; 
 import WeatherData from './WeatherData';
 import './styles.css';
-import { 
+/*import { 
     SUN,
     //WINDY
-} from './../../constants/weathers';
+} from './../../constants/weathers';*/
 import transformWeather from './../../services/transformWeather';
 import { api_weather } from './../../constants/api_url';
 
-const data = {
+/*const data = {
     temperature: 27,
     weatherState: SUN,
     humidity: 17,
     wind: '10 m/s'
-}
+}*/
 
 /*const data2 = {
     temperature: 15,
@@ -38,7 +38,7 @@ class WeatherLocation extends Component {
         super();// super constructor o constructor de donde extiende o hereda
         this.state = {
             city: 'Buenos Aires',
-            data: data,
+            data: null,// data,
         };
 
     }
@@ -47,11 +47,17 @@ class WeatherLocation extends Component {
         console.log("render");
 
         const { city, data } = this.state;
-        return (
+        /*return (
             <div className="weatherLocationCont">
                 <Location city={city}></Location>
                 <WeatherData data={data}></WeatherData>
                 <button onClick={this.handleUpdateClick}>Actualizar</button>
+            </div>
+        );*/
+        return (
+            <div className="weatherLocationCont">
+                <Location city={city}></Location>
+                { data ? <WeatherData data={data}></WeatherData> : "Cargando..." }
             </div>
         );
 
@@ -65,10 +71,10 @@ class WeatherLocation extends Component {
         }).then((data) =>{//como devuelve una promesa
             //se una nuevamente 'then' y 'data' es el json
             console.log(data);
-            debugger;
+            //debugger;
             const newWeather = transformWeather(data);
             console.log(newWeather);
-            debugger;
+            //debugger;
             this.setState({
                 data: newWeather
             });
