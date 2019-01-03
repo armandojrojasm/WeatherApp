@@ -100,16 +100,16 @@ class WeatherLocation extends Component {
     }
 
     
-    componentWillMount() {
+    /*componentWillMount() {
         console.log("UNSAFE componentWillMount");
         
-    }
+    }*/
 
 
-    componentWillUpdate(nextProps, nextState) {
+    /*componentWillUpdate(nextProps, nextState) {
         console.log("UNSAFE componentWillUpdate");
         
-    }
+    }*/
     
     
     
