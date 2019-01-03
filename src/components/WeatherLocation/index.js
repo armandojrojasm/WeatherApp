@@ -91,6 +91,7 @@ class WeatherLocation extends Component {
 
     componentDidMount() {
         console.log("componentDidMount");
+        this.handleUpdateClick();
     }
 
     componentDidUpdate(prevProps, prevState) {
