@@ -7,7 +7,10 @@ import './styles.css';
     //WINDY
 } from './../../constants/weathers';*/
 import transformWeather from './../../services/transformWeather';
-import { api_weather } from './../../constants/api_url';
+//import { api_weather } from './../../constants/api_url';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import PropTypes from 'prop-types';
+import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
 
 /*const data = {
     temperature: 27,
@@ -32,12 +35,16 @@ import { api_weather } from './../../constants/api_url';
 
 class WeatherLocation extends Component {
     
-    constructor() {
-        console.log("construtor");
+    constructor(props) {
+        console.log("constructor");
 
-        super();// super constructor o constructor de donde extiende o hereda
+        super(props);// super constructor o constructor de donde extiende o hereda
+
+        const { city } = props;
+
         this.state = {
-            city: 'Buenos Aires',
+            //city: 'Buenos Aires',
+            city,
             data: null,// data,
         };
 
@@ -54,16 +61,24 @@ class WeatherLocation extends Component {
                 <button onClick={this.handleUpdateClick}>Actualizar</button>
             </div>
         );*/
-        return (
+        /*return (
             <div className="weatherLocationCont">
                 <Location city={city}></Location>
                 { data ? <WeatherData data={data}></WeatherData> : "Cargando..." }
+            </div>
+        );*/
+        return (
+            <div className="weatherLocationCont">
+                <Location city={city}></Location>
+                { data ? <WeatherData data={data}></WeatherData> : <CircularProgress size={50} /> } 
             </div>
         );
 
     }      
 
     handleUpdateClick = () => {
+        const api_weather = getUrlWeatherByCity(this.state.city);
+
         fetch(api_weather).then((resolve) => {
            
             return resolve.json();// para obtener el json se llama a función 'json',
@@ -141,5 +156,8 @@ promesa.then( (mensaje) => {
 */
 
 
+WeatherLocation.propTypes = {
+    city : PropTypes.string.isRequired,
+};
 
 export default WeatherLocation;
