@@ -5,6 +5,7 @@ import './App.css';
 import LocationList from './components/LocationList';
 
 const cities = [
+  "Lima,pe",
   "Buenos Aires,ar",
   "Bogota,col",
   "Caracas,ve",
