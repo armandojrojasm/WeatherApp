@@ -40,12 +40,13 @@ class WeatherLocation extends Component {
 
         super(props);// super constructor o constructor de donde extiende o hereda
 
-        const { city } = props;
+        const { city, onWeatherLocationClick } = props;
 
         this.state = {
             //city: 'Buenos Aires',
             city,
             data: null,// data,
+            onWeatherLocationClick
         };
 
     }
@@ -53,7 +54,8 @@ class WeatherLocation extends Component {
     render() {
         console.log("render");
 
-        const { city, data } = this.state;
+        const { city, data, onWeatherLocationClick } = this.state;
+
         /*return (
             <div className="weatherLocationCont">
                 <Location city={city}></Location>
@@ -68,7 +70,7 @@ class WeatherLocation extends Component {
             </div>
         );*/
         return (
-            <div className="weatherLocationCont">
+            <div className="weatherLocationCont" onClick={onWeatherLocationClick}>
                 <Location city={city}></Location>
                 { data ? <WeatherData data={data}></WeatherData> : <CircularProgress size={50} /> } 
             </div>
@@ -158,6 +160,7 @@ promesa.then( (mensaje) => {
 
 WeatherLocation.propTypes = {
     city : PropTypes.string.isRequired,
+    onWeatherLocationClick : PropTypes.func,
 };
 
 export default WeatherLocation;
