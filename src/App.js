@@ -69,7 +69,7 @@ class App extends Component {
               <div className='yellow'>&nbsp;</div>
             </Col>                                    
           </Row> */}
-          <Row between="xs">
+          <Row around="xs">
             <Col xs={2}>
               <div className='red'>&nbsp;</div>
             </Col>
