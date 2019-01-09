@@ -69,17 +69,17 @@ class App extends Component {
               <div className='yellow'>&nbsp;</div>
             </Col>                                    
           </Row> */}
-          <Row>
-            <Col xsOffset={3} xs>
+          <Row between="xs">
+            <Col xs={2}>
               <div className='red'>&nbsp;</div>
             </Col>
-            <Col xs>
+            <Col xs={2}>
               <div className='green'>&nbsp;</div>
             </Col>
-            <Col xs>
+            <Col xs={2}>
               <div className='blue'>&nbsp;</div>
             </Col>
-            <Col xs>
+            <Col xs={2}>
               <div className='yellow'>&nbsp;</div>
             </Col>                                    
           </Row>
