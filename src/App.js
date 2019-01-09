@@ -3,6 +3,10 @@ import './App.css';
 import LocationList from './components/LocationList';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 //import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import Paper from '@material-ui/core/Paper';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Toolbar from '@material-ui/core/Toolbar';
 
 const cities = [
   "Lima,pe",
@@ -33,7 +37,13 @@ class App extends Component {
     return (
       <Grid>
         <Row>
-          Titulo
+          <AppBar position="sticky">
+            <Toolbar>
+              <Typography variant="title" color="inherit">
+                Weather App
+              </Typography>
+            </Toolbar>
+          </AppBar>
         </Row>
         <Row>
           <Col xs={12} md={6}>
