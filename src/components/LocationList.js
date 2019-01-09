@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
 const LocationList = ({ cities, onSelectedLocation }) => {
 
     const handleWeatherLocationClick = (city) => {
-        console.log("Ciudad: " + city);
+        console.log(`(LocationList) handleWeatherLocationClick: ${city}`);
         onSelectedLocation(city);
     }
 
