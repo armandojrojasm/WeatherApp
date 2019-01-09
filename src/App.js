@@ -55,7 +55,7 @@ class App extends Component {
         <LocationList cities={cities} 
           onSelectedLocation={this.handleSelectedLocation}></LocationList>
         <Grid fluid>
-          <Row>
+          {/* <Row>
             <Col xs={12} sm={6} md={4} lg={3}>
               <div className='red'>&nbsp;</div>
             </Col>
@@ -66,6 +66,20 @@ class App extends Component {
               <div className='blue'>&nbsp;</div>
             </Col>
             <Col xs={12} sm={6} md={4} lg={3}>
+              <div className='yellow'>&nbsp;</div>
+            </Col>                                    
+          </Row> */}
+          <Row>
+            <Col xs>
+              <div className='red'>&nbsp;</div>
+            </Col>
+            <Col xs>
+              <div className='green'>&nbsp;</div>
+            </Col>
+            <Col xs>
+              <div className='blue'>&nbsp;</div>
+            </Col>
+            <Col xs>
               <div className='yellow'>&nbsp;</div>
             </Col>                                    
           </Row>
