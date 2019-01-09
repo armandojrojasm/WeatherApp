@@ -70,7 +70,7 @@ class App extends Component {
             </Col>                                    
           </Row> */}
           <Row>
-            <Col xs>
+            <Col xsOffset={3} xs>
               <div className='red'>&nbsp;</div>
             </Col>
             <Col xs>
