@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import Location from './Location'; 
 import WeatherData from './WeatherData';
 import './styles.css';
-/*import { 
-    SUN,
-    //WINDY
-} from './../../constants/weathers';*/
 import transformWeather from './../../services/transformWeather';
-//import { api_weather } from './../../constants/api_url';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import PropTypes from 'prop-types';
 import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
@@ -121,24 +116,16 @@ class WeatherLocation extends Component {
         console.log("componentDidUpdate");
         
     }
-
     
     /*componentWillMount() {
         console.log("UNSAFE componentWillMount");
         
     }*/
 
-
     /*componentWillUpdate(nextProps, nextState) {
         console.log("UNSAFE componentWillUpdate");
         
     }*/
-    
-    
-    
-    
-
-
 }
 
 
