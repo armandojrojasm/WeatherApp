@@ -46,3 +46,10 @@
 .yellow {
   background-color: yellow;
 }
+
+.details {
+  background: gray;
+  height: 100vh;
+  width: 100%;
+}
+

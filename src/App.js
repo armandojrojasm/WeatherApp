@@ -31,62 +31,22 @@ class App extends Component {
 
   render() {
     return (
-      
+      <Grid>
+        <Row>
+          Titulo
+        </Row>
+        <Row>
+          <Col xs={12} md={6}>
+            <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>
+          </Col>
+          <Col xs={12} md={6}>
+            <div className="details">
 
-/*       <div>
-        <Grid>
-          <Row>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='red'>&nbsp;</div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='green'>&nbsp;</div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='blue'>&nbsp;</div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='yellow'>&nbsp;</div>
-            </Col>                                    
-          </Row>
-        </Grid>
-      </div> */
-      <div className="App">
-        <LocationList cities={cities} 
-          onSelectedLocation={this.handleSelectedLocation}></LocationList>
-        <Grid fluid>
-          {/* <Row>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='red'>&nbsp;</div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='green'>&nbsp;</div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='blue'>&nbsp;</div>
-            </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <div className='yellow'>&nbsp;</div>
-            </Col>                                    
-          </Row> */}
-          <Row around="xs">
-            <Col xs={2}>
-              <div className='red'>&nbsp;</div>
-            </Col>
-            <Col xs={2}>
-              <div className='green'>&nbsp;</div>
-            </Col>
-            <Col xs={2}>
-              <div className='blue'>&nbsp;</div>
-            </Col>
-            <Col xs={2}>
-              <div className='yellow'>&nbsp;</div>
-            </Col>                                    
-          </Row>
-        </Grid>
-      </div>
+            </div>
+          </Col>
+        </Row>
 
-
+      </Grid>
     );
   }
 }
