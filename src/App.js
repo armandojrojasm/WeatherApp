@@ -23,8 +23,25 @@ const cities = [
 
 class App extends Component {
 
+  constructor() {
+
+    super();// super constructor o constructor de donde extiende o hereda
+
+    //solo puedo hacer 'this.state' esto en el constructor, en cualquier otro lado es 'this.setState'
+    this.state = { city: 'Nueva ciudad' };
+  }
+
   handleSelectedLocation = (city) => {
     console.log(`(App) handleSelectedLocation: ${city}`);
+
+    // this.setState({
+    //   city: city,
+    // });
+
+    this.setState({
+      city,
+    });
+
   };
 
   // render() {
@@ -37,6 +54,9 @@ class App extends Component {
   // }
 
   render() {
+
+    const { city } = this.state;
+
     return (
       <Grid>
         <Row>
@@ -55,12 +75,11 @@ class App extends Component {
           <Col xs={12} md={6}>
             <Paper>
               <div className="details">
-                <ForecastExtended city={"Buenos Aires,ar"}></ForecastExtended>
+                <ForecastExtended city={ city }></ForecastExtended>
               </div>
             </Paper>
           </Col>
         </Row>
-
       </Grid>
     );
   }
