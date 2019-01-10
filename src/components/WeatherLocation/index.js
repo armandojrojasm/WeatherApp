@@ -83,6 +83,7 @@ class WeatherLocation extends Component {
         }).then((data) =>{//como devuelve una promesa
             //se una nuevamente 'then' y 'data' es el json
             console.log(data);
+            console.log(JSON.stringify(data));
             //debugger;
             const newWeather = transformWeather(data);
             console.log(newWeather);
@@ -91,6 +92,10 @@ class WeatherLocation extends Component {
                 data: newWeather
             });
         });
+
+        // this.setState({
+        //     data: transformWeather(JSON.parse('{"coord":{"lon":-74.08,"lat":4.6},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":290.15,"pressure":1026,"humidity":59,"temp_min":290.15,"temp_max":290.15},"visibility":10000,"wind":{"speed":7.2,"deg":320},"clouds":{"all":40},"dt":1547143200,"sys":{"type":1,"id":8582,"message":0.0047,"country":"CO","sunrise":1547118469,"sunset":1547161228},"id":3688689,"name":"Bogota","cod":200}'))
+        // });
 
         //console.log("actualizado");
         

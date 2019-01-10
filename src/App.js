@@ -16,6 +16,7 @@ const cities = [
   "Barcelona,es",
   "Miami,us",
   "Washington,us",
+  "Ciudad de México,mx",
 ];
 
 class App extends Component {
@@ -50,9 +51,10 @@ class App extends Component {
             <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>
           </Col>
           <Col xs={12} md={6}>
-            <div className="details">
-
+            <Paper elevation={4}>
+              <div className="details">
             </div>
+            </Paper>
           </Col>
         </Row>
 
