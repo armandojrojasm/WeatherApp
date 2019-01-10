@@ -7,6 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
+import ForecastExtended from './components/ForecastExtended';
+
 
 const cities = [
   "Lima,pe",
@@ -51,9 +53,10 @@ class App extends Component {
             <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>
           </Col>
           <Col xs={12} md={6}>
-            <Paper elevation={4}>
+            <Paper zDepth={4}>
               <div className="details">
-            </div>
+                <ForecastExtended></ForecastExtended>
+              </div>
             </Paper>
           </Col>
         </Row>
