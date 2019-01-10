@@ -53,9 +53,9 @@ class App extends Component {
             <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}></LocationList>
           </Col>
           <Col xs={12} md={6}>
-            <Paper zDepth={4}>
+            <Paper>
               <div className="details">
-                <ForecastExtended></ForecastExtended>
+                <ForecastExtended ></ForecastExtended>
               </div>
             </Paper>
           </Col>
